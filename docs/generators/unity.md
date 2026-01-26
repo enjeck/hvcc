@@ -169,7 +169,7 @@ The android NDK comes with a `<NDK>/build/cmake/android.toolchain.cmake` file th
 
 From the hvcc export `unity` directory containing the `CMakeLists.txt`.
 
-```
+```shell
 cmake -S . -B cmake-build-android -G Ninja \ 
     -DCMAKE_TOOLCHAIN_FILE=$NDK/build/cmake/android.toolchain.cmake \
     -DANDROID_ABI=arm64-v8a \
@@ -185,13 +185,13 @@ https://docs.unity3d.com/Manual/PluginInspector.html
 
 iOS builds are unique in that the source code is needed when compiling the Unity game for the device.
 
-Once the game is working as expected in the Unity editor (the macos plugins are required for that) and the heavy C# scripts are correctly attached to the gameobjects, go to `File` > `Build Settings` in the Unity menu. Then generate the Xcode project by selecting iOS platform, adding the required scenes and clicking `Build`.
+Once the game is working as expected in the Unity editor (the macos plugins are required for that) and the heavy C# scripts are correctly attached to the gameobjects, go to `File > Build Settings` in the Unity menu. Then generate the Xcode project by selecting iOS platform, adding the required scenes and clicking `Build`.
 
 Open the Xcode project from the directory previously selected in Unity's build menu.
 
 Create a new group in the left-hand side Project explorer section, the group name is not important but in this case we'll called it `heavy`.
 
-Download the [Unity source target](../getting-started/patching.md#using-the-generated-targets)  from the patch compile page and copy the contents of the `source/heavy/` folder into the `heavy` Xcode group that was created previously. Make sure to copy every file.
+Download the Unity source target from the patch compile page and copy the contents of the `source/heavy/` folder into the `heavy` Xcode group that was created previously. Make sure to copy every file.
 
 ![unity_ios_xcode](../img/docs_unity_ios_xcode.png)
 
