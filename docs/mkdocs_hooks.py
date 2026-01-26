@@ -1,4 +1,5 @@
-import re, os
+import os
+import re
 
 
 def python_indent(content):
